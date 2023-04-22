@@ -1,16 +1,12 @@
 import { useState, useEffect, createContext, useContext } from 'react';
 
-// const StoreContext = createContext(null);
-
 interface Package {
   name: string;
   link: string;
-  // other properties...
 }
 
 interface SearchResult {
   package: Package;
-  // other properties...
 }
 
 interface Store {
@@ -47,10 +43,7 @@ function StoreProvider({ children }:any) {
     fetch('https://api.npms.io/v2/search?q=reactjs')
       .then(response => response.json())
       .then(data => setData(data.results))
-      // .then(data => console.log(data))
-      // .then(data => setData(data))
       .catch(error => console.error(error));
-      // console.log(data);
   }, []);
 
   const deleteData = (deletedata: any) => {
@@ -86,10 +79,6 @@ function StoreProvider({ children }:any) {
     }
     return filteredData;
   };
-
-  // const filterData = (filterFunction) => {
-  //   return data.filter(filterFunction);
-  // }
 
   const store = {
     data,

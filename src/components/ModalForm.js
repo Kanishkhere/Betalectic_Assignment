@@ -8,8 +8,6 @@ const style = {
 
 function ModalForm(props) {
   const [inputValue, setInputValue] = useState('');
-
-
   const [selectedOption, setSelectedOption] = useState(null);
   const [deta_name, setData_name] = useState('');
   const [link, setLink] = useState('');
@@ -21,13 +19,6 @@ function ModalForm(props) {
     setLink(event.target.value);
   }
 
-  // const filteredData = filterDataByName('react');
- 
-  // const addData = (data) => {
-  //   setaddData([...add_data, data]);
-  // }
-
-
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
     setLink(event.target.link);
@@ -35,11 +26,9 @@ function ModalForm(props) {
 
   const { data, filterDataByName , addTableData, table_data} = useStore();
 
-  // const filteredData = filterDataByName('react');
  
   const filteredData = data.filter(item => {
     const name = item.package.name.toLowerCase();
-    // const search = inputValue.toLowerCase();
     const search = inputValue.toLowerCase();
     return name.includes(search);
   });
@@ -49,13 +38,8 @@ function ModalForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     addTableData(deta_name , link);
-    // setTableData("added");
     closeModal();
   };
-
-  // const openModal = () => {
-  //   setIsModalOpen(true);
-  // };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -65,7 +49,7 @@ function ModalForm(props) {
     <>    {isModalOpen && (
     <div className=" absolute top-0 left-0 bg-[#00000088] w-full h-full z-10 ">
       <div className="absolute top-0 left-[50%] z-10 bg-white rounded-lg border-2 shadow-xl border-purple-300 -translate-x-[50%] p-10 my-[50vh] -translate-y-[50%] w-[60vw] ">
-        {/* <button onClick={openModal}>Open Modal Form</button> */}
+        {}
         
           <div className="modal">
             <div className="modal-content">
