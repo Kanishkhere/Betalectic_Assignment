@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/index.js", "src/pages/index.js", "src/components/ModalForm.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/index.js", "src/pages/index.tsx", "src/components/ModalForm.tsx"],
   "exclude": ["node_modules"]
 }
