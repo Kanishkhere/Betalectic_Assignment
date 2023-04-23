@@ -11,15 +11,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { data, table_data, deleteData } = useStore();
-  const filteredData = data.filter((item) => {
-    const name = item.package.name.toLowerCase();
-    // const search = inputValue.toLowerCase();
-    const search = "react";
-    return name.includes(search);
-  });
+  // const filteredData = data.filter((item) => {
+  //   const name = item.package.name.toLowerCase();
+  //   // const search = inputValue.toLowerCase();
+  //   const search = "react";
+  //   return name.includes(search);
+  // });
 
-  const [favorites, setFavorites] = useState([]);
-  const [buttonPosition, setButtonPosition] = useState("center");
+  //const [favorites, setFavorites] = useState([]);
+  //const [buttonPosition, setButtonPosition] = useState("center");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [acceptalert, setacceptalert] = useState(false);
   const [selvar, setSelvar] = useState(0);
@@ -107,7 +107,7 @@ export default function Home() {
                   <td className="px-[10%] flex justify-evenly items-center border-2 border-slate-400 p-2">
                     <AiOutlineEye
                       onClick={() => viewFavorite(index)}
-                      className="h-[1.5em] w-[1.5em] text-slate-700"
+                      className="cursor-pointer h-[1.5em] w-[1.5em] text-slate-700"
                     />
                     <button
                       onClick={() => {
@@ -119,7 +119,7 @@ export default function Home() {
                     </button>
                     <AiFillEdit
                       onClick={() => editFavorite(index)}
-                      className="h-[1.5em] w-[1.5em] text-slate-700"
+                      className="cursor-pointer h-[1.5em] w-[1.5em] text-slate-700"
                     />
                   </td>
                   {/* <td className=' border-2 border-slate-400 p-2'>{data[1]}</td> */}
