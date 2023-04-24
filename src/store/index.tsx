@@ -43,16 +43,16 @@ function useStore() {
 function StoreProvider({ children }:any) {
   const [data, setData] = useState<SearchResult[]>([]);
   const [filtereddata, setfilteredData] = useState<SearchResult[]>([]);
-  //const [table_data, setTableData] = useState(JSON.parse(typeof window !== 'undefined' && window.localStorage.getItem('table_data') || '[]'));
+  const [table_data, setTableData] = useState(JSON.parse(typeof window !== 'undefined' && window.localStorage.getItem('table_data') || '[]'));
 
-  const [table_data, setTableData] = useState<Array<any>>([]);
+  // const [table_data, setTableData] = useState<Array<any>>([]);
 
-  useEffect(() => {
-    const storedData = window.localStorage.getItem('table_data');
-    if (storedData) {
-      setTableData(JSON.parse(storedData));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedData = window.localStorage.getItem('table_data');
+  //   if (storedData) {
+  //     setTableData(JSON.parse(storedData));
+  //   }
+  // }, []);
 
   useEffect( () => {
     fetch('https://api.npms.io/v2/search?q=reactjs')
